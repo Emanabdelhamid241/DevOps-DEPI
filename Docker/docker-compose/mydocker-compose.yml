@@ -1,0 +1,34 @@
+services:
+  redis: 
+    image: redis
+ 
+  db:
+    image: postgres
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+      
+      
+  vote_app:
+    build: ./vote
+    ports: 
+            - 4000:80
+    links:
+            - redis
+
+ 
+ 
+  result_app:
+    build: ./result
+    ports:
+            - 4001:80
+    links:
+            - db
+      
+ 
+  worker_app:
+    build: ./worker
+    links:
+            - redis
+            - db
+           
