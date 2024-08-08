@@ -1,0 +1,22 @@
+- name : first playbook
+  hosts : localhost
+  vars :
+          myname : 
+          - "eman"
+          - "madeha"
+          - "mariem"
+          - "afnan"
+          - "mona"
+          - "eman hesham"
+  tasks :
+         - name : print msg
+           debug :
+                   msg : first ansible project
+
+         - name : execute whoami command
+           command : whoami
+         
+         - name : print vars
+           debug :
+                    msg : 'my name is {{myname[0]}}' 
+
