@@ -6,7 +6,7 @@ pipeline {
     }
 
     environment {
-        DOCKER_REGISTRY = 'dockerhub' // e.g., 'dockerhub'
+        DOCKER_REGISTRY = 'emanabdelhamed241' // e.g., 'dockerhub'
         IMAGE_NAME = 'myweb' // e.g., 'myapp'
     }
 
