@@ -21,7 +21,7 @@ pipeline {
             steps {
                 script {
                     sh "ls"
-                    sh "cd Jenkins/docker"
+                    sh "cd Jenkins/docker/"
                     sh "ls"
                     sh "docker build -t ${DOCKER_REGISTRY}/${IMAGE_NAME}:${params.DOCKER_IMAGE_TAG} ."
                 }
