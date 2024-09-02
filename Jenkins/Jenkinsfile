@@ -39,7 +39,7 @@ pipeline {
         always {
             echo "Pipeline completed with Docker image tag: ${params.DOCKER_IMAGE_TAG}"
         }
-        SUCCESS {
+        success {
         slackSend color: 'good', message: 'build success '
         }
         failure {
