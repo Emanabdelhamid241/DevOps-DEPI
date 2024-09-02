@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         DOCKER_REGISTRY = 'dockerhub' // e.g., 'dockerhub'
-        IMAGE_NAME = 'mypsweb' // e.g., 'myapp'
+        IMAGE_NAME = 'emanabdelhamed241/mypsweb' // e.g., 'myapp'
     }
 
     stages {
