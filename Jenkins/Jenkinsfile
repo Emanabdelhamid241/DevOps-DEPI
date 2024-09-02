@@ -7,7 +7,7 @@ pipeline {
 
     environment {
         DOCKER_REGISTRY = 'dockerhub' // e.g., 'dockerhub'
-        IMAGE_NAME = 'emanabdelhamed241/mypsweb' // e.g., 'myapp'
+        IMAGE_NAME = 'myweb' // e.g., 'myapp'
     }
 
     stages {
@@ -17,13 +17,13 @@ pipeline {
             }
         }
         
-        // stage('Build Docker Image') {
-        //     steps {
-        //         script {
-        //             sh "docker build -t ${DOCKER_REGISTRY}/${IMAGE_NAME}:${params.DOCKER_IMAGE_TAG} ./docker"
-        //         }
-        //     }
-        // }
+        stage('Build Docker Image') {
+            steps {
+                script {
+                    sh "docker build -t ${DOCKER_REGISTRY}/${IMAGE_NAME}:${params.DOCKER_IMAGE_TAG} ./docker"
+                }
+            }
+        }
         
         stage('Push Docker Image') {
             steps {
